@@ -1,0 +1,25 @@
+﻿@model Video_Manager.Models.VideoFile
+
+@{
+    ViewData["Title"] = "Edit Video File";
+}
+
+<h1>Edit Video File</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="FileName" class="control-label"></label>
+        <input asp-for="FileName" class="form-control" />
+        <span asp-validation-for="FileName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FilePath" class="control-label"></label>
+        <input asp-for="FilePath" class="form-control" />
+        <span asp-validation-for="FilePath" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

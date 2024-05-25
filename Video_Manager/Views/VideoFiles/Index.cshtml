@@ -1,0 +1,27 @@
+﻿@model List<Video_Manager.Models.VideoFile>
+
+<h1>Video Files</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>File Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var videoFile in Model)
+        {
+                <tr>
+                    <td>@videoFile.Id</td>
+                    <td>@videoFile.FileName</td>
+                    <td>
+                    <a asp-action="Details" asp-route-id="@videoFile.Id">Delete</a> |
+                        <a asp-action="Edit" asp-route-id="@videoFile.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@videoFile.Id">Delete</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
